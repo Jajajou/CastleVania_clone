@@ -1,32 +1,38 @@
-# Prerequisites
-*.d
+# Visual Studio
+.vs/
+week1/.vs/
+week1/ARM64/
+week1/Debug/
+week1/Week1/
+week1/pakages/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
+# Build results
+x64/
+x86/
+*.exe
 *.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
+*.pdb
+*.obj
+*.log
+*.tlog
+*.vcxproj.user
 *.lib
 
-# Executables
-*.exe
-*.out
-*.app
+# Temporary files
+*.tmp
+*.bak
+*.old
+
+# DirectX shader cache
+*.vsh
+*.psh
+
+# NuGet packages
+packages/
+*.nupkg
+project.lock.json
+
