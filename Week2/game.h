@@ -9,7 +9,6 @@
 class game {
 private:
     HWND hWnd;
-    int backBufferWidth, backBufferHeight;
     ID3D10Device* pD3DDevice;
     IDXGISwapChain* pSwapChain;
     ID3D10RenderTargetView* pRenderTargetView;

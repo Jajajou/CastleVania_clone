@@ -18,7 +18,6 @@ public:
     int getHeight() { return _height; }
 
     bool LoadFromFile(const char* filePath);  // Hàm load texture từ file
-    ID3D10ShaderResourceView* getShaderResourceView() { return _rsview; }
 };
 
 typedef Texture* LPTEXTURE;

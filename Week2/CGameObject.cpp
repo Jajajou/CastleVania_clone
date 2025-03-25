@@ -11,6 +11,10 @@ void CGameObject::Update(DWORD dt) {
 	// Do nothing by default
 }
 
+void CGameObject::Render() {
+	// Empty render function, can be overridden by derived classes
+}
+
 void CGameObject::SetPosition(float x, float y) {
 	this->x = x;
 	this->y = y;
