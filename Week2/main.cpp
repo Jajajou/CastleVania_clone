@@ -3,7 +3,10 @@
 #include "CWindow.h"
 #include "CPlayer.h"
 
+#define PLAYER_TEXTURE_PATH "idleWalk1.png"
+
 CPlayer* simon;
+LPTEXTURE playerTexture;
 
 bool keyLeft = false, keyRight = false, keyUp = false, keyDown = false;
 
@@ -44,11 +47,34 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     game* game = game::GetInstance();
     game->Init(hWnd);
 
-    // Run game loop (empty for now)
-    game->Run();
+    // Load texture cho Simon (Giả sử bạn có một hàm load texture như sau)
+    playerTexture = new Texture();  // Khởi tạo texture cho Simon
+    playerTexture->LoadFromFile(PLAYER_TEXTURE_PATH);  // Hàm LoadFromFile cần được định nghĩa trong CTexture
+
+    // Khởi tạo Simon với vị trí và texture
+    simon = new CPlayer(100, 100, 0, 0, playerTexture);
+
+    // Game loop - cập nhật và vẽ Simon
+    MSG msg;
+    while (true) {
+        // Xử lý thông báo hệ thống
+        if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
+            if (msg.message == WM_QUIT) {
+                break;
+            }
+            TranslateMessage(&msg);
+            DispatchMessage(&msg);
+        }
+
+        // Cập nhật và vẽ Simon
+        simon->HandleInput(keyLeft, keyRight, keyUp, keyDown);  // Cập nhật hướng di chuyển
+        simon->Update(16);  // Cập nhật vị trí (thời gian delta giả sử là 16ms)
+        simon->Render();    // Vẽ Simon lên màn hình
+    }
 
     // Cleanup
     game->Cleanup();
+    return 0;
 
     return 0;
 }

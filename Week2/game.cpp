@@ -2,6 +2,9 @@
 #include <comdef.h>
 #include <windows.h>
 
+int game::backBufferWidth = 1280;   // Define the variable once
+int game::backBufferHeight = 720;   // Define the variable once
+
 game* game::__instance = nullptr;
 
 game* game::GetInstance() {

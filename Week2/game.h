@@ -15,7 +15,7 @@ private:
     ID3D10RenderTargetView* pRenderTargetView;
     ID3DX10Sprite* spriteObject;
 	static game* __instance;
-    int backBufferWidth, backBufferHeight;
+    static int backBufferWidth, backBufferHeight;
 
 public:
     // Singleton Pattern

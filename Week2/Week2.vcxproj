@@ -186,17 +186,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CGameObject.h" />
+    <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CWindow.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="Week2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CGameObject.cpp" />
+    <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CWindow.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\Castlevania.ico" />
